@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #616363;
+}
+
+/* Estilizacao para header */
+#randomplay-header {
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 50%;
+  background-color: #616363;
+  justify-content: center;
+}
+
+#randomplay-header h1 {
+  color: #ffffff;
+}
+
+.btn {
+  width: 72px;
+  height: 28px;
+  align-self: center;
+  border: none;
+  border-radius: 12px;
+}
+
+/* Estilizacao para SearchBar */
+#searchbar {
+  padding: 8px;
+  margin-top: 64px;
+  width: 100%;
+  min-height: 60px;
+  max-height: 70px;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+#barra-pesquisa {
+  width: 70%;
+  min-width: 300px;
+  max-width: 500px;
+  height: 36px;
+  border-radius: 12px;
+  border: none;
+  text-align: left;
+  padding: 4px;
+}
+
+#btn-procurar {
+  height: 36px;
+  width: 120px;
+  background-color: #acc03b;
+  font-weight: 600;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#btn-procurar:hover {
+  border: 2px solid #acc03b;
+  background-color: #222121;
+  color: #ffffff;
+}
+
+/* estilizacao para componente de showcase de filmes */
+#filmes-container {
+  padding-top: 36px;
+}
+
+#filmes {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 190px;
+  background-color: #585855;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+#filme {
+  height: 140px;
+  width: 180px;
+  border-radius: 12px;
+  padding: 8px;
+  background-color: antiquewhite;
+}
