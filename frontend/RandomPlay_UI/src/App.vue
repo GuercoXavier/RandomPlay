@@ -2,6 +2,7 @@
   <Header />
   <SearchBar />
   <Movies />
+  <Movies />
 </template>
 
 <script setup>

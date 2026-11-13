@@ -2,9 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
+:root {
+  --main-bg-color: #161616;
+  --objects-color: #d7f300;
+  --objects-color-dark: #8a9b09;
+}
+
 body {
-  background-color: #616363;
+  background-color: var(--main-bg-color);
 }
 
 /* Estilizacao para header */
@@ -14,7 +21,7 @@ body {
   flex-direction: row;
   width: 100%;
   gap: 50%;
-  background-color: #616363;
+  /* background-color: #616363; */
   justify-content: center;
 }
 
@@ -22,6 +29,21 @@ body {
   color: #ffffff;
 }
 
+#btn-entrar {
+  height: 36px;
+  width: 120px;
+  background-color: var(--objects-color);
+  font-weight: 600;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#btn-entrar:hover {
+  border: 2px solid var(--objects-color);
+  background-color: var(--main-bg-color);
+  color: #ffffff;
+}
+
+/* essa estilizacao eh geral*/
 .btn {
   width: 72px;
   height: 28px;
@@ -58,13 +80,13 @@ body {
 #btn-procurar {
   height: 36px;
   width: 120px;
-  background-color: #acc03b;
+  background-color: var(--objects-color);
   font-weight: 600;
   transition: background-color 0.2s ease-in-out;
 }
 
 #btn-procurar:hover {
-  border: 2px solid #acc03b;
+  border: 2px solid var(--objects-color);
   background-color: #222121;
   color: #ffffff;
 }
@@ -72,6 +94,7 @@ body {
 /* estilizacao para componente de showcase de filmes */
 #filmes-container {
   padding-top: 36px;
+  color: #ffffff;
 }
 
 #filmes {
@@ -79,16 +102,40 @@ body {
   flex-direction: row;
   width: 100%;
   min-height: 190px;
-  background-color: #585855;
+  /* background-color: #585855; */
   gap: 12px;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
+  /* TODO: resolver hover sobre os filmes */
+  /* overflow-y: ; */
+  /* z-index: 1000000; */
 }
 
 #filme {
-  height: 140px;
+  height: 180px;
   width: 180px;
   border-radius: 12px;
   padding: 8px;
-  background-color: antiquewhite;
+  background-color: var(--objects-color-dark);
+  transition: transform 0.3s ease-in-out;
+  /* z-index: 1000000; */
+}
+
+#filme img {
+  width: 100%;
+  height: 90%;
+  border-radius: 12px;
+}
+
+#filme p {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--main-bg-color);
+}
+
+#filme:hover {
+  transform: scale(1.5);
+  z-index: 100000;
 }
