@@ -93,20 +93,26 @@ body {
 
 /* estilizacao para componente de showcase de filmes */
 #filmes-container {
-  padding-top: 36px;
+  padding-top: 100px;
   color: #ffffff;
 }
 
 #filmes {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
+  display: grid;
+  /* flex-direction: row; */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  width: 90%;
   min-height: 190px;
   /* background-color: #585855; */
-  gap: 12px;
-  justify-content: center;
+  /* padding-left: auto;
+  padding-right: auto; */
+  gap: 18px;
+  /* justify-content: center;
   align-items: center;
-  overflow-x: hidden;
+  align-self: center; */
+  justify-self: center;
+  
+  /* overflow-x: hidden; */
   /* TODO: resolver hover sobre os filmes */
   /* overflow-y: ; */
   /* z-index: 1000000; */
@@ -130,12 +136,12 @@ body {
 
 #filme p {
   text-align: center;
-  font-size: 18px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--main-bg-color);
 }
 
 #filme:hover {
-  transform: scale(1.5);
-  z-index: 100000;
+  transform: scale(1.1);
+  z-index: 3;
 }
