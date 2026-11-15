@@ -15,12 +15,15 @@
     <div id="detalhes-extra">
       <!-- <div id="genero-filme"></div> -->
       <!-- <div id="classificacao-filme">10.0</div> -->
-      <span id="genero-filme">Accao</span>
-      <span id="classificacao-filme">10.0</span>
-      <span id="data-lancamento-filme">2027</span>
+      <span id="genero-filme"><b>Genero </b>Action</span>
+      <span id="classificacao-filme"><b>Clasificacao </b>10.0</span>
+      <span id="data-lancamento-filme"><b>Data de Lancamento </b>2027</span>
     </div>
+    <!-- TODO: melhorar esses nomes depois  -->
     <div id="detalhes-extra-extra">
-      <p id="audio-info-filme"><b>Audio: </b>daasdsadasd</p>
+      <p id="audio-info-filme">
+        <b>Audio: </b>daasdsadaasdadasdasd, asdasd, asdasd
+      </p>
       <p id="legenda-info-filme"><b>Legenda: </b>oooooooo</p>
       <!-- <div id="audio-info-filme">
             p

@@ -6,13 +6,38 @@
 }
 :root {
   --main-bg-color: #161616;
+  --main-bg-color-variation: #383838;
   --objects-color: #d7f300;
   --objects-color-dark: #8a9b09;
 }
 
+/* Estilizacoes gerais - que se aplicam a tags no geral e nao de 
+ de forma especifica */
 body {
   background-color: var(--main-bg-color);
 }
+
+button {
+  background-color: var(--objects-color);
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  border: 2px solid var(--objects-color);
+  background-color: var(--main-bg-color);
+  color: #ffffff;
+}
+
+span {
+  padding: 8px;
+  border-radius: 12px;
+  background-color: var(--main-bg-color);
+}
+
+/* TODO: remover estilos repetidos dos outros botoes */
 
 /* Estilizacao para header */
 #randomplay-header {
@@ -162,4 +187,96 @@ body {
 
 .random-play:hover {
   transform: scale(1.1);
+}
+
+/* Estilizacao para componente 'FilmeDetalhes" */
+#cartao-filme {
+  color: #ffffff;
+  width: 90%;
+  display: block;
+  row-gap: 12px;
+  background-color: var(--main-bg-color-variation);
+  justify-self: center;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+#cartao-filme img {
+  width: 90%;
+  height: 25%;
+  padding-bottom: 12px;
+}
+
+#nome-filme {
+  display: flex;
+  padding-bottom: 12px;
+  column-gap: 60%;
+}
+
+#nome-filme button {
+  height: 32px;
+  width: 120px;
+  /* border-radius: 12px;
+  border: none; */
+}
+
+#descricao-filme {
+  text-align: justify;
+  padding-bottom: 12px;
+}
+
+#detalhes-extra {
+  display: flex;
+  column-gap: 12px;
+  padding-bottom: 12px;
+}
+
+#genero-filme {
+  /* background-color: aqua; */
+  display: block;
+  width: 72px;
+  text-align: center;
+}
+#genero-filme b {
+  display: block;
+  /* padding: 4px; */
+  margin-bottom: 6px;
+}
+
+#classificacao-filme {
+  /* background-color: blue; */
+  display: block;
+  width: 120px;
+  text-align: center;
+}
+#classificacao-filme b {
+  display: block;
+  /* padding: 4px; */
+  margin-bottom: 6px;
+}
+
+#data-lancamento-filme {
+  /* background-color: blueviolet; */
+  display: block;
+  width: 180px;
+  text-align: center;
+}
+#data-lancamento-filme b {
+  display: block;
+  /* padding: 4px; */
+  margin-bottom: 6px;
+}
+
+#detalhes-extra-extra {
+  display: flex;
+  column-gap: 12px;
+}
+
+#detalhes-extra-extra p {
+  background-color: var(--main-bg-color);
+  height: fit-content;
+  width: 40%;
+  border-radius: 12px;
+  padding: 8px;
+  display: block;
 }
