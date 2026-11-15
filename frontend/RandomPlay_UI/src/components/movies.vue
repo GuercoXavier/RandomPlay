@@ -24,4 +24,10 @@ const props = defineProps({
     required: true,
   },
 });
+
+// estilo especial para seccao 'Random Play'
+document.querySelectorAll("p").forEach((elemento) => {
+  if (elemento.textContent === "Random Play")
+    elemento.classList.add("random-play");
+});
 </script>

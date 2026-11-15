@@ -1,8 +1,9 @@
 <template>
   <Header />
   <SearchBar />
-  <Movies :filmes="filmes" :seccao="recomendado" />
-  <Movies :filmes="filmes" :seccao="todos" />
+  <Movies :filmes="filmes_em_destaque" :seccao="secc_destaque" />
+  <Movies :filmes="filmes" :seccao="secc_randomPlay" />
+  <Movies :filmes="filmes" :seccao="secc_todos" />
 </template>
 
 <script setup>
@@ -15,19 +16,20 @@ import imgSrc from "./assets/images/Season_3_Chapter_4_Tape_Cover_Front.webp";
 // imprts do vue
 import { ref } from "vue";
 
-const recomendado = "Recomendado"; // define a seccao de filmes recomendados
-const todos = "Todos Filmes"; // define a seccao de todos os filmes
+const secc_destaque = "Destaques"; // define a seccao de filmes recomendados
+const secc_randomPlay = "Random Play"; // define a seccao especial Random Play
+const secc_todos = "Todos Filmes"; // define a seccao de todos os filmes
 
 // objecto que define o formato de dados de um filme
-const filme = {
-  id: 0,
-  titulo: "",
-  categoria: "",
-  descricao: "",
-  classificacao: 0,
-  ano: 0,
-  caminho: "",
-};
+// const filme = {
+//   id: 0,
+//   titulo: "",
+//   categoria: "",
+//   descricao: "",
+//   classificacao: 0,
+//   ano: 0,
+//   caminho: "",
+// };
 
 // lista que contem filmes e uso de 'ref' para
 // que a actualizacao da lista seja logo visivel na pagina
@@ -89,4 +91,12 @@ const filmes = ref([
     classificacao: 10,
   },
 ]);
+
+// NOTA(pessoal): quando usamos 'ref' para poder aceder ao elemento real devemos usar o value
+
+// lista de filmes recomendados
+const filmes_em_destaque = ref(
+  filmes.value.filter((filme) => filme.classificacao >= 7),
+);
+// console.log(filmes_recomendados.value);
 </script>
