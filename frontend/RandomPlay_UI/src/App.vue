@@ -4,7 +4,7 @@
   <!-- <Movies :filmes="filmes_em_destaque" :seccao="secc_destaque" />
   <Movies :filmes="filmes" :seccao="secc_randomPlay" />
   <Movies :filmes="filmes" :seccao="secc_todos" /> -->
-  <FilmeDetalhes />
+  <FilmeDetalhes :filme="filme_com_detalhe" />
 </template>
 
 <script setup>
@@ -94,6 +94,8 @@ const filmes = ref([
   },
 ]);
 
+const filme_com_detalhe = ref(filmes.value.at(0)).value;
+console.log(filme_com_detalhe);
 // NOTA(pessoal): quando usamos 'ref' para poder aceder ao elemento real devemos usar o value
 
 // lista de filmes recomendados

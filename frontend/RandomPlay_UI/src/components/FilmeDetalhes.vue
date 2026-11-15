@@ -7,13 +7,10 @@
         alt="Sem imagem"
       />
     </div> -->
-    <img
-      src="../assets/images/Season_3_Chapter_4_Tape_Cover_Front.webp"
-      alt="Sem imagem"
-    />
+    <img :src="filme.caminho" alt="Sem imagem" />
     <div id="detalhes-filme">
       <div id="nome-filme">
-        <p>Nome do filme</p>
+        <p>{{ filme.titulo }}</p>
         <button id="assistir-filme">Assistir Agora</button>
       </div>
       <p id="descricao-filme">
@@ -25,8 +22,10 @@
       <div id="detalhes-extra">
         <!-- <div id="genero-filme"></div> -->
         <!-- <div id="classificacao-filme">10.0</div> -->
-        <span id="genero-filme"><b>Genero </b>Action</span>
-        <span id="classificacao-filme"><b>Clasificacao </b>10.0</span>
+        <span id="genero-filme"><b>Genero </b>{{ filme.categoria }}</span>
+        <span id="classificacao-filme"
+          ><b>Clasificacao </b>{{ filme.classificacao }}</span
+        >
         <span id="data-lancamento-filme"><b>Data de Lancamento </b>2027</span>
       </div>
       <!-- TODO: melhorar esses nomes depois  -->
@@ -45,4 +44,14 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { defineProps } from "vue";
+
+const props = defineProps({
+  filme: {
+    type: Object,
+    required: true,
+  },
+});
+// console.log(props.filme_com_detalhe);
+</script>
