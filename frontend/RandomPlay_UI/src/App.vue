@@ -1,9 +1,10 @@
 <template>
   <Header />
   <SearchBar />
-  <Movies :filmes="filmes_em_destaque" :seccao="secc_destaque" />
+  <!-- <Movies :filmes="filmes_em_destaque" :seccao="secc_destaque" />
   <Movies :filmes="filmes" :seccao="secc_randomPlay" />
-  <Movies :filmes="filmes" :seccao="secc_todos" />
+  <Movies :filmes="filmes" :seccao="secc_todos" /> -->
+  <FilmeDetalhes />
 </template>
 
 <script setup>
@@ -11,6 +12,7 @@
 import Header from "./components/Header.vue";
 import Movies from "./components/movies.vue";
 import SearchBar from "./components/SearchBar.vue";
+import FilmeDetalhes from "./components/FilmeDetalhes.vue";
 import imgSrc from "./assets/images/Season_3_Chapter_4_Tape_Cover_Front.webp";
 
 // imprts do vue
