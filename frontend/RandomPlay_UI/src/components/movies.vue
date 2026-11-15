@@ -5,7 +5,7 @@
     <div id="filmes">
       <div
         id="filme"
-        @click="esteFilme"
+        @click="esteFilme(filme.id)"
         v-for="filme in filmes"
         :key="filme.id"
       >
@@ -40,8 +40,8 @@ document.querySelectorAll("p").forEach((elemento) => {
     elemento.classList.add("random-play");
 });
 
-function esteFilme() {
-  props.onMostrarFilme();
+function esteFilme(id) {
+  props.onMostrarFilme(id);
 }
 
 // function esseFilme(){

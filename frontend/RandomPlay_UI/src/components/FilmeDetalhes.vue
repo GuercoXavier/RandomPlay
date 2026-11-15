@@ -1,11 +1,9 @@
 <!-- esse componente eh o cartao que mostrara os detalhes do filme selecionado -->
 <template>
   <div id="cartao-filme">
+    <button @click="voltar" id="pagina-anterior">voltar</button>
     <div id="imagem-filme">
-      <img
-        src="../assets/images/Season_3_Chapter_4_Tape_Cover_Front.webp"
-        alt="Sem imagem"
-      />
+      <img :src="filme.caminho" alt="Sem imagem" />
     </div>
 
     <!-- <img :src="filme.caminho" alt="Sem imagem" /> -->
@@ -14,32 +12,17 @@
         <p>{{ filme.titulo }}</p>
         <button id="assistir-filme">Assistir Agora</button>
       </div>
-      <p id="descricao-filme">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius
-        voluptatibus dolor alias sunt. Expedita debitis similique ducimus quam
-        nesciunt, quae accusantium consequuntur impedit ipsa sunt labore
-        laboriosam suscipit eius nisi?
-      </p>
+      <p id="descricao-filme">{{ filme.descricao }}</p>
       <div id="detalhes-extra">
         <!-- <div id="genero-filme"></div> -->
         <!-- <div id="classificacao-filme">10.0</div> -->
         <span id="genero-filme"><b>Genero </b>{{ filme.categoria }}</span>
         <span id="classificacao-filme"
-          ><b>Clasificacao </b>{{ filme.classificacao }}</span
+          ><b>Clasificacao </b>{{ filme.classificacao / 100 }}</span
         >
-        <span id="data-lancamento-filme"><b>Data de Lancamento </b>2027</span>
-      </div>
-      <!-- TODO: melhorar esses nomes depois  -->
-      <div id="detalhes-extra-extra">
-        <p id="audio-info-filme">
-          <b>Audio: </b>daasdsadaasdadasdasd, asdasd, asdasd
-        </p>
-        <p id="legenda-info-filme"><b>Legenda: </b>oooooooo</p>
-        <!-- <div id="audio-info-filme">
-            p
-        </div> -->
-
-        <!-- <div id="legenda-info-filme"></div> -->
+        <span id="data-lancamento-filme"
+          ><b>Data de Lancamento </b>{{ filme.data_lancamento }}</span
+        >
       </div>
     </div>
   </div>
@@ -54,5 +37,9 @@ const props = defineProps({
     required: true,
   },
 });
+
+function voltar() {
+  window.location.hash = "#/";
+}
 // console.log(props.filme_com_detalhe);
 </script>

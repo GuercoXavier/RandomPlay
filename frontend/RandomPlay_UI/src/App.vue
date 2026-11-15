@@ -1,51 +1,47 @@
 <template>
-  <!-- <div id="home">
-    <Header />
-    <SearchBar />
-    <Movies
-      :filmes="filmes_em_destaque"
-      :seccao="secc_destaque"
-      :onMostrarFilme="esseFilme"
-    />
-    <Movies :filmes="filmes" :seccao="secc_randomPlay" />
-    <Movies :filmes="filmes" :seccao="secc_todos" />
-  </div> -->
-  <a href="#/"><Home /></a> | <a href="#/detalhes"> <FilmeDetalhes /></a> |
-  <component :is="pagina_actual" />
-  <!-- <div id="filme-componente">
-    <FilmeDetalhes :filme="filme_com_detalhe" />
-  </div> -->
+  <!-- <a href="#/"><Home /></a> | <a href="#/detalhes"> <FilmeDetalhes /></a> |
+  <component :is="pagina_actual" /> -->
+  <component v-if="pagina_actual" :is="pagina_actual" v-bind="pagina_props" />
+  <component v-else :is="pagina_actual" v-bind="props_pagina" />
 </template>
 
 <script setup>
 // imports locais
 import Home from "./components/Home.vue";
-import Header from "./components/Header.vue";
-import Movies from "./components/movies.vue";
-import SearchBar from "./components/SearchBar.vue";
 import FilmeDetalhes from "./components/FilmeDetalhes.vue";
-import imgSrc from "./assets/images/Season_3_Chapter_4_Tape_Cover_Front.webp";
+import { filmes, carregarFilmes } from "./dados/filmes.js";
 
 // imprts do vue
-// import { ref } from "vue";
 import { ref, computed } from "vue";
+import { onMounted } from "vue";
 
-const rotas = {
-  "/": Home,
-  "/detalhes": FilmeDetalhes,
-};
-
-const caminhoa_actual = ref(window.location.hash);
+const caminho_actual = ref(window.location.hash || "#/");
 
 window.addEventListener("hashchange", () => {
-  caminhoa_actual.value = window.location.hash;
+  caminho_actual.value = window.location.hash || "#/";
 });
+
+// remove "#" e fica com algo tipo "/detalhes/3"
+const caminho_limpo = computed(
+  () => caminho_actual.value.replace(/^#/, "") || "/",
+);
 
 const pagina_actual = computed(() => {
-  return rotas[caminhoa_actual.value.slice(1) || "/"];
+  if (caminho_limpo.value.startsWith("/detalhes")) return FilmeDetalhes;
+  return Home;
 });
 
-// const filme_com_detalhe = ref(filmes.value.at(0)).value;
-// console.log(filme_com_detalhe);
-// NOTA(pessoal): quando usamos 'ref' para poder aceder ao elemento real devemos usar o value
+// para atributos com 'ref' para poder aceder ao elemento real devemos usar o value
+const pagina_props = computed(() => {
+  if (caminho_limpo.value.startsWith("/detalhes")) {
+    const id = caminho_limpo.value.split("/")[2];
+    const filme = filmes.value.find((f) => f.id === id) || filmes[0];
+    return { filme };
+  }
+  return {};
+});
+
+onMounted(() => {
+  carregarFilmes();
+});
 </script>
