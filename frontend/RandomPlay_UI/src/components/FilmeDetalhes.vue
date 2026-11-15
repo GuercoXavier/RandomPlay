@@ -1,13 +1,14 @@
 <!-- esse componente eh o cartao que mostrara os detalhes do filme selecionado -->
 <template>
   <div id="cartao-filme">
-    <!-- <div id="imagem-filme">
+    <div id="imagem-filme">
       <img
         src="../assets/images/Season_3_Chapter_4_Tape_Cover_Front.webp"
         alt="Sem imagem"
       />
-    </div> -->
-    <img :src="filme.caminho" alt="Sem imagem" />
+    </div>
+
+    <!-- <img :src="filme.caminho" alt="Sem imagem" /> -->
     <div id="detalhes-filme">
       <div id="nome-filme">
         <p>{{ filme.titulo }}</p>
@@ -45,7 +46,7 @@
 </template>
 
 <script setup>
-import { defineProps } from "vue";
+// import { defineProps } from "vue";
 
 const props = defineProps({
   filme: {

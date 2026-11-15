@@ -192,8 +192,8 @@ span {
 /* Estilizacao para componente 'FilmeDetalhes" */
 #cartao-filme {
   color: #ffffff;
-  width: 90%;
-  height: 90vh;
+  width: 100vw;
+  height: 100vh;
   display: block;
   row-gap: 12px;
   background-color: var(--main-bg-color-variation);
@@ -210,7 +210,7 @@ span {
 
 #cartao-filme img {
   width: 100%;
-  height: 64%;
+  height: 100%;
   padding-bottom: 12px;
   border-radius: 12px;
 }
@@ -296,3 +296,38 @@ span {
   padding: 8px;
   display: block;
 }
+
+/* estilizacao da app */
+a {
+  text-decoration: none;
+}
+
+/* sobreposicao de componente filme sobre o resto da tela */
+/* #home {
+  position: relative;
+  z-index: 1;
+} */
+/* 
+#filme-componente {
+  position: absolute;
+  z-index: 10000000;
+  bottom: auto;
+  top: auto;
+  left: auto;
+  top: 50%;
+  bottom: 50%;
+  display: none;
+}
+
+#filme-componente a {
+  text-decoration: none;
+} */
+/* #cartao-filme {
+  position: absolute;
+  z-index: 10000;
+  top: 50%;
+  bottom: 50%;
+  left: auto;
+  right: auto;
+  display: none;
+} */
