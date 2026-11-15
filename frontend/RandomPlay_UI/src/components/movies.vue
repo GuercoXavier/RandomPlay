@@ -1,26 +1,27 @@
 <!-- componente responsavel por mostrar lista de filmes -->
 <template>
   <div id="filmes-container">
-    <p id="categoria"></p>
+    <p id="categoria">{{ seccao }}</p>
     <div id="filmes">
       <div id="filme" v-for="filme in filmes" :key="filme.id">
         <img :src="filme.caminho" alt="Sem Imagem" />
         <p id="titulo-filme">{{ filme.titulo }}</p>
       </div>
-
     </div>
   </div>
 </template>
 
 <script setup>
-import {defineProps} from 'vue';
+import { defineProps } from "vue";
 
 const props = defineProps({
   filmes: {
     type: Array,
-    required: true
-  }
+    required: true,
+  },
+  seccao: {
+    type: String,
+    required: true,
+  },
 });
-
-
 </script>
